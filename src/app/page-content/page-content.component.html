@@ -1,0 +1,64 @@
+<section>
+  <h1>Michał Czyż</h1>
+  <h2>Web Developer</h2>
+  <button type="button">{{ "Read More" | uppercase }}</button>
+</section>
+<section>
+  <div>
+    <div>
+      <img alt="about-me-img">
+    </div>
+    <div>
+      <div>About me</div>
+      <div></div>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+        laborum.
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Projects</h2>
+  <app-project-container imageUrl="" title="Lorem ipsum"
+    content="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    siteUrl=""></app-project-container>
+  <app-project-container imageUrl="" title="Lorem ipsum"
+    content="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    siteUrl=""></app-project-container>
+  <app-project-container imageUrl="" title="Lorem ipsum"
+    content="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    siteUrl=""></app-project-container>
+</section>
+<section>
+  <h2>Skills</h2>
+  <div>
+    <app-skill-progressbar [filledPercentage]="90" skillName="HTML5 + CSS3 + JS5"></app-skill-progressbar>
+    <app-skill-progressbar [filledPercentage]="60" skillName="React / Redux"></app-skill-progressbar>
+    <app-skill-progressbar [filledPercentage]="80" skillName="Tailwind CSS"></app-skill-progressbar>
+    <app-skill-progressbar [filledPercentage]="55" skillName="Angular"></app-skill-progressbar>
+  </div>
+  <div>
+    <app-skill-progressbar [filledPercentage]="65" skillName="Node.js"></app-skill-progressbar>
+    <app-skill-progressbar [filledPercentage]="75" skillName="Gatsby.js"></app-skill-progressbar>
+    <app-skill-progressbar [filledPercentage]="65" skillName="MongoDB"></app-skill-progressbar>
+    <app-skill-progressbar [filledPercentage]="65" skillName="SQL"></app-skill-progressbar>
+  </div>
+</section>
+<section>
+  <div>
+    <div>
+      <img alt="contact-image">
+    </div>
+    <div>
+      <h2>Contact me:</h2>
+      <app-contact-line contactKey="E-MAIL" contactValue="asd@asd.com" contactUrl="" imageUrl=""></app-contact-line>
+      <app-contact-line contactKey="GITHUB" contactValue="/Chatyis" contactUrl="" imageUrl=""></app-contact-line>
+      <app-contact-line contactKey="LinkedIn" contactValue="LINK" contactUrl="" imageUrl=""></app-contact-line>
+    </div>
+  </div>
+  <footer>@COPYRIGHT MICHAL CZYZ ALL RIGHTS RESERVED</footer>
+</section>
