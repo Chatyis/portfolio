@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Pacifico&family=Taviraj&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: linear-gradient(97.9deg, #9B3DF9 3.75%, #FF4083 135.14%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.bg-gradient {
+  background: linear-gradient(92.45deg, #6A16BE 0%, #CE2761 100%);
+}
+
+.font-oswald {
+  font-family: Oswald;
+}
+
+.font-pacifico {
+  font-family: Pacifico;
+}
