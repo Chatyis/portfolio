@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        Oswald:["Oswald"],
+        Pacifico:["Pacifico"],
+        taviraj:["Taviraj"]
+      }
+    },
   },
   plugins: [],
 }

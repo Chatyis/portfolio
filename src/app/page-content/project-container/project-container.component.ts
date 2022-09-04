@@ -13,4 +13,5 @@ export class ProjectContainerComponent {
   @Input() siteUrl?: string;
   @Input() title?: string;
   @Input() content?: string;
+  @Input() isAlignedRight?: boolean;
 }
