@@ -13,5 +13,7 @@ export class ProjectContainerComponent {
   @Input() siteUrl?: string;
   @Input() title?: string;
   @Input() content?: string;
+  @Input() stack?: string;
   @Input() isAlignedRight?: boolean;
+  @Input() isButtonVisible = true;
 }

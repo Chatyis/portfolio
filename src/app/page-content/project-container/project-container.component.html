@@ -1,6 +1,5 @@
 <div [ngClass]="{'flex h-project':true,'flex-row-reverse':isAlignedRight}">
-  <div [ngClass]="{'w-project-img flex-shrink-0 bg-gray-100 my-5 shadow-md':true,'rounded-r-2xl':!isAlignedRight,'rounded-l-2xl':isAlignedRight}">
-    <img src={{imageUrl}} alt="project-image">
+  <div class="w-project-img bg-cover bg-no-repeat flex-shrink-0 bg-gray-100 my-5 shadow-md" [ngClass]="{'rounded-r-2xl':!isAlignedRight,'rounded-l-2xl':isAlignedRight}" [style.background-image]="'url(/assets/images/'+imageUrl+')'">
   </div>
   <div class="px-32 flex flex-col justify-center">
     <h2 class="text-5xl text-gray-800 font-taviraj font-bold">
@@ -9,8 +8,11 @@
     <p class="text-2xl tracking-wide py-5 mb-3 text-gray-600">
       {{content}}
     </p>
-    <a class=" bg-gradient w-max text-white px-5 py-2 rounded-md font-bold text-lg" href={{siteUrl}}>
-      Visit Site
+    <p class="text-xl tracking-wide py-5 mb-3 text-gray-600" *ngIf="stack">
+      Stack: {{stack}}
+    </p>
+    <a class=" bg-gradient w-max text-white px-5 py-2 rounded-md font-bold text-lg" [href]="siteUrl" *ngIf="isButtonVisible">
+      View on Github
     </a>
   </div>
 </div>

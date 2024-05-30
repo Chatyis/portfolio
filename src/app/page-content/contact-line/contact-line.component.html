@@ -1,3 +1,5 @@
-<img src={{imageUrl}}>
-<p>{{contactKey}}:</p>
-<a href={{contactUrl}}>{{contactValue}}</a>
+<div class="flex items-center gap-5">
+  <a [href]="contactUrl" target="_blank"><img [src]="'/assets/images/'+imageUrl" alt="" class="w-20" ></a>
+  <!--<p class="text-6xl font-bold text-gray-900">{{contactKey}}:</p>-->
+  <a class="text-5xl text-gray-700" [href]="contactUrl" target="_blank">{{ contactValue }}</a>
+</div>
