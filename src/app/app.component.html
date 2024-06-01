@@ -1,2 +1,2 @@
-<app-navbar></app-navbar>
-<app-page-content></app-page-content>
+<app-navbar [activeSection]="activeSection"></app-navbar>
+<app-page-content (activeSectionChange)="activeSection = $event"></app-page-content>

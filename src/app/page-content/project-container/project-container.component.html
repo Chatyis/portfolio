@@ -1,7 +1,8 @@
-<div [ngClass]="{'flex h-project':true,'flex-row-reverse':isAlignedRight}">
+@defer (on viewport) {
+  <div class="flex h-project " [ngClass]="{'flex-row-reverse animate-resize-left':isAlignedRight, 'animate-resize-right':!isAlignedRight}">
   <div class="w-project-img bg-cover bg-no-repeat flex-shrink-0 bg-gray-100 my-5 shadow-md" [ngClass]="{'rounded-r-2xl':!isAlignedRight,'rounded-l-2xl':isAlignedRight}" [style.background-image]="'url(/assets/images/'+imageUrl+')'">
   </div>
-  <div class="px-32 flex flex-col justify-center">
+  <div class="animate-fade-in-delayed px-32 flex flex-col justify-center">
     <h2 class="text-5xl text-gray-800 font-taviraj font-bold">
       {{title}}
     </h2>
@@ -11,8 +12,11 @@
     <p class="text-xl tracking-wide py-5 mb-3 text-gray-600" *ngIf="stack">
       Stack: {{stack}}
     </p>
-    <a class=" bg-gradient w-max text-white px-5 py-2 rounded-md font-bold text-lg" [href]="siteUrl" *ngIf="isButtonVisible">
+    <a class="bg-gradient w-max text-white px-5 py-2 rounded-md font-bold text-lg" [href]="siteUrl" *ngIf="isButtonVisible">
       View on Github
     </a>
   </div>
 </div>
+} @placeholder {
+  <div class="h-screen"></div>
+}
