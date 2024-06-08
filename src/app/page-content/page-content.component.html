@@ -1,63 +1,74 @@
-<section id="home" class="mb-1 w-full h-screen bg-black flex flex-col justify-center items-center">
-  <h1 class="text-white text-7xl font-oswald font-bold mt-auto animate-fade-in">Michał Czyż</h1>
-  <h2 class="text-gradient pt-8 text-4xl font-pacifico pb-4 animate-fade-in">Full stack developer</h2>
-  <a type="button" href="#about-me" class="animate-fade-in-delayed bg-white py-2 px-3 font-bold text-md justify-self-end mt-auto rounded-lg mb-10">{{ "Read More" |uppercase }}</a>
-  <div class="w-full flex justify-between">
+<section class="mb-1 w-full h-screen bg-black flex flex-col justify-center items-center" id="home">
+  <h1 class="text-white sm:text-7xl text-6xl font-oswald font-bold mt-auto animate-fade-in text-center">Michał Czyż</h1>
+  <h2 class="text-gradient pt-8 sm:text-4xl text-3xl font-pacifico pb-4 animate-fade-in text-center">Full stack
+    developer</h2>
+  <a class="animate-fade-in-delayed bg-white py-2 px-3 font-bold text-md justify-self-end mt-auto rounded-lg mb-10"
+     href="#about-me"
+     type="button">{{ "Read More" |uppercase }}</a>
+  <div class="md:flex hidden w-full  justify-between">
     <div class="triangle-left  border-white w-64"></div>
     <div class="triangle-right  border-white w-64"></div>
   </div>
 </section>
-  <section id="about-me" class="w-full h-screen flex justify-center items-center">
-    @defer (on viewport) {
-      <div class="w-full bg-black text-white bg-gradient flex z-10 animate-resize-right">
-      <div class="w-2/5 flex-shrink-0 relative animate-fade-in-delayed">
-        <img class="absolute w-2/3 -top-32 right-32" src="assets/images/my-face.jpg" alt="about-me-img">
+<section class="w-full h-screen flex lg:flex-row flex-col justify-center items-center" id="about-me">
+  @defer (on viewport) {
+    <div
+      class="w-full lg:gap-0 md:gap-8  text-white bg-gradient md:flex-row flex-col flex z-10 animate-resize-right">
+      <div
+        class="xl:w-2/5 lg:w-1/2 lg:pt-0 pt-5 lg:pl-0 pl-3 flex-shrink-0 relative animate-fade-in-delayed justify-center bg-white flex">
+        <img class="lg:absolute lg:-top-24 sm:min-w-[400px] sm:w-[400px] w-[280px] min-w-[280px]"
+             src="assets/images/my-face-no-bg.png"
+             alt="about-me-img">
       </div>
-      <div class="w-3/5 animate-fade-in-delayed">
-        <div class=" font-taviraj text-7xl font-bold pt-12 ">About me</div>
-        <div class="text-2xl py-10 opacity-70 tracking-wider pr-10">
-          I'm Michał Czyż and for a long time I've been interested in anything connected with programming, algorithms, and problem-solving. My main focus is full-stack web applications development, with some experience in mobile and desktop apps. Apart from programming, I'm also interested in TTRPGs, herpetology, and calisthenics.
+      <div class="xl:w-3/5 lg:w-1/2 animate-fade-in-delayed md:bg-none bg-gradient md:text-left text-center">
+        <div class=" font-taviraj xl:text-7xl text-5xl font-bold pt-12 ">About me</div>
+        <div class="2xl:text-2xl xl:text-xl md:text-lg py-10 opacity-70 tracking-wider md:px-0 md:pr-10 px-5">
+          I'm Michał Czyż and for a long time I've been interested in anything connected with programming, algorithms,
+          and problem-solving. My main focus is full-stack web applications development, with some experience in mobile
+          and desktop apps. Apart from programming, I'm also interested in TTRPGs, herpetology, and calisthenics.
         </div>
         <a href="#projects">
           <button class="text-black bg-white rounded-md font-bold px-7 py-2 mb-5 text-md">PROJECTS</button>
         </a>
       </div>
     </div>
-    } @placeholder {
-      <div class="h-screen" id="about-me"></div>
-    }
-  </section>
+  } @placeholder {
+    <div class="h-screen" id="about-me"></div>
+  }
+</section>
 <section id="projects">
   <h2 class="text-center text-7xl font-bold mb-6">Projects</h2>
-  <app-project-container stack="Angular, Django, Numpy, OpenCV2, Skimage" imageUrl="dominant-colors.png" title="5 dominant colors determination" content="Project focused strictly on logic part, this full-stack web application's purpose is to determine 5 dominant colors on the passed image with selected parameters" siteUrl="https://github.com/Chatyis/5-Dominant-Colors-Determination"></app-project-container>
-  <app-project-container stack="Angular, Angular Material (M3), Tailwindcss, .NET Core, SQL, Dapper" imageUrl="quizapp.png" title="Quiz App" content="Player can select variety of categories and answer questions to get score, alternatively user can choose to log in as a guest. For logged in players score is saved and results in getting higher levels in categories." siteUrl="https://github.com/Chatyis/Quiz-App" [isAlignedRight]="true"></app-project-container>
-  <app-project-container imageUrl="kebab.png" stack="React, Tailwindcss, GatsbyJS" title="Company page" content="One view company page" siteUrl="" [isButtonVisible]="false"></app-project-container>
+  <app-project-container
+    content="Project focused strictly on logic part, this full-stack web application's purpose is to determine 5 dominant colors on the passed image with selected parameters"
+    imageUrl="dominant-colors.png"
+    siteUrl="https://github.com/Chatyis/5-Dominant-Colors-Determination"
+    stack="Angular, Django, Numpy, OpenCV2, Skimage"
+    title="5 dominant colors determination"></app-project-container>
+  <app-project-container [isAlignedRight]="true"
+                         content="Player can select variety of categories and answer questions to get score, alternatively user can choose to log in as a guest. For logged in players score is saved and results in getting higher levels in categories."
+                         imageUrl="quizapp.png"
+                         siteUrl="https://github.com/Chatyis/Quiz-App"
+                         stack="Angular, Angular Material (M3), Tailwindcss, .NET Core, SQL, Dapper"
+                         title="Quiz App"></app-project-container>
+  <app-project-container [isButtonVisible]="false" content="One view company page" imageUrl="kebab.png"
+                         siteUrl="" stack="React, Tailwindcss, GatsbyJS" title="Company page"></app-project-container>
 </section>
-<section id="skills" class="mt-20 py-14 bg-gray-900 px-60">
-
-  <h2 class="text-center text-7xl font-bold mb-6 text-white">Skills</h2>
-  <div class="flex justify-between mb-10">
-    <div class="my-auto w-44"><img src="assets/images/angular-logo.png" alt="angular-logo"></div>
-    <div class="my-auto w-44"><img src="assets/images/tailwind-logo.png" alt="tailwind-logo"></div>
-    <div class="my-auto w-44"><img src="assets/images/typescript-logo.png" alt="typescript-logo"></div>
-    <div class="my-auto w-44"><img src="assets/images/react-logo.png" alt="react-logo"></div>
-  </div>
-  <div class="flex justify-around ">
-    <div class="my-auto w-44"><img src="assets/images/nodejs-logo.png" alt="nodejs-logo"></div>
-    <div class="my-auto w-44"><img src="assets/images/netcore-logo.png" alt="netcore-logo"></div>
-    <div class="my-auto w-44"><img src="assets/images/mongodb-logo.png" alt="mongodb-logo"></div>
-  </div>
-</section>
-<div class="flex justify-center gap-20 my-20">
-  <app-contact-line contactKey="GITHUB" contactValue="GITHUB" contactUrl="https://github.com/Chatyis" imageUrl="github.png"></app-contact-line>
-  <app-contact-line contactKey="LinkedIn" contactValue="LinkedIn" contactUrl="https://www.linkedin.com/in/micha%C5%82-czy%C5%BC-16006122b/" imageUrl="linkedin-logo.png"></app-contact-line>
+<app-skills-section></app-skills-section>
+<div class="flex justify-center gap-20 my-20 md:flex-row flex-col">
+  <app-contact-line contactKey="GITHUB" contactUrl="https://github.com/Chatyis" contactValue="GITHUB"
+                    imageUrl="github.png"></app-contact-line>
+  <app-contact-line contactKey="LinkedIn" contactUrl="https://www.linkedin.com/in/micha%C5%82-czy%C5%BC-16006122b/"
+                    contactValue="LinkedIn"
+                    imageUrl="linkedin-logo.png"></app-contact-line>
 </div>
 <footer class="bg-gray-900 text-white p-5 text-2xl font-bold flex justify-between">
   <div>&#64;COPYRIGHT MICHAL CZYZ ALL RIGHTS RESERVED</div>
   <div>
     <p>Credits:</p>
-    <div class="flex flex-col">
-      <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by riajulislam - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Google - Flaticon</a></div>
+    <div class="flex flex-col text-sm">
+      <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by riajulislam -
+        Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons created by Google -
+        Flaticon</a></div>
   </div>
 </footer>

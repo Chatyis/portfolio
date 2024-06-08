@@ -1,22 +1,27 @@
 @defer (on viewport) {
-  <div class="flex h-project " [ngClass]="{'flex-row-reverse animate-resize-left':isAlignedRight, 'animate-resize-right':!isAlignedRight}">
-  <div class="w-project-img bg-cover bg-no-repeat flex-shrink-0 bg-gray-100 my-5 shadow-md" [ngClass]="{'rounded-r-2xl':!isAlignedRight,'rounded-l-2xl':isAlignedRight}" [style.background-image]="'url(/assets/images/'+imageUrl+')'">
+  <div class="flex flex-col items-center md:items-start md:h-[600px] mb-10 mt-5"
+       [ngClass]="{'md:flex-row-reverse animate-resize-left':isAlignedRight, 'md:flex-row animate-resize-right':!isAlignedRight}">
+    <div
+      class="md:max-w-[1000px] sm:max-w-[500px] max-w-[300px] md:h-full sm:h-[300px] h-[180px]  w-full bg-cover bg-no-repeat flex-shrink-0 bg-gray-100  shadow-md md:rounded-none rounded-2xl"
+      [ngClass]="{'md:rounded-r-2xl':!isAlignedRight,'md:rounded-l-2xl':isAlignedRight}"
+      [style.background-image]="'url(/assets/images/'+imageUrl+')'">
+    </div>
+    <div class="animate-fade-in-delayed md:px-32 px-3 flex flex-col justify-center md:my-auto md:text-left text-center">
+      <h2 class="md:text-5xl text-4xl text-gray-800 font-taviraj font-bold md:text-left text-center md:mt-0 mt-5">
+        {{ title }}
+      </h2>
+      <p class="md:text-2xl text-lg tracking-wide md:py-5 py-3 md:mb-3 text-gray-600">
+        {{ content }}
+      </p>
+      <p class="text-xl tracking-wide md:py-5 pb-5 md:mb-3 text-gray-600" *ngIf="stack">
+        Stack: {{ stack }}
+      </p>
+      <a class="bg-gradient w-max text-white px-5 py-2 rounded-md font-bold text-lg m-auto md:mr-auto" [href]="siteUrl"
+         *ngIf="isButtonVisible">
+        View on Github
+      </a>
+    </div>
   </div>
-  <div class="animate-fade-in-delayed px-32 flex flex-col justify-center">
-    <h2 class="text-5xl text-gray-800 font-taviraj font-bold">
-      {{title}}
-    </h2>
-    <p class="text-2xl tracking-wide py-5 mb-3 text-gray-600">
-      {{content}}
-    </p>
-    <p class="text-xl tracking-wide py-5 mb-3 text-gray-600" *ngIf="stack">
-      Stack: {{stack}}
-    </p>
-    <a class="bg-gradient w-max text-white px-5 py-2 rounded-md font-bold text-lg" [href]="siteUrl" *ngIf="isButtonVisible">
-      View on Github
-    </a>
-  </div>
-</div>
 } @placeholder {
   <div class="h-screen"></div>
 }
