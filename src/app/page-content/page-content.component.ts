@@ -5,7 +5,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './page-content.component.html',
   styleUrls: ['./page-content.component.scss']
 })
-export class PageContentComponent implements OnInit{
+export class PageContentComponent implements OnInit {
   @Output() activeSectionChange = new EventEmitter<string>();
 
   ngOnInit() {
@@ -16,6 +16,7 @@ export class PageContentComponent implements OnInit{
     };
 
     const observer = new IntersectionObserver((entries) => {
+      console.log(entries);
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           this.activeSectionChange.next(entry.target.id);
@@ -24,6 +25,7 @@ export class PageContentComponent implements OnInit{
     }, options);
 
     document.querySelectorAll('section').forEach(section => {
+      console.log(section);
       observer.observe(section);
     });
   }
